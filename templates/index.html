@@ -2,55 +2,66 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="refresh" content="30" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}" />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='styles.css')}}"
+    />
     <title>To-Do List</title>
   </head>
   <body>
+    <!-- Main container for the page content -->
     <div class="main__container">
+      <!-- Heading for the To-Do List -->
       <h1>To-Do List</h1>
+
+      <!-- Form for adding new tasks -->
       <form action="/add" method="post">
+        <!-- Container for search input and button -->
         <div class="search__container">
-          <input class="search__box" placeholder="Enter new task..." type="text" name="name" />
+          <!-- Input field for entering a new task -->
+          <input
+            class="search__box"
+            placeholder="Enter new task..."
+            type="text"
+            name="name"
+          />
+
+          <!-- Button to submit the form and add a new task -->
           <button class="search__button" type="submit">Add Task</button>
         </div>
       </form>
-      
-      <!-- <table class="table__container">
-        <tbody>
-          {% for todo in todo_list %}
-          <tr class="table__row">
-            <td>{{todo.name}}</td>
-            {% if todo.done == False %}
-            <td>Not Done</td>
-            {% else %}
-            <td>Done</td>
-            {% endif %}
-            <td><a href="/update/{{todo.task_id}}"">Update</a></td>
-            <td><a href="/delete/{{todo.task_id}}">Delete</a></td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table> -->
+
+      <!-- Container for the list of tasks -->
       <div class="list__container">
+        <!-- Unordered list for displaying tasks -->
         <ul class="list__main">
+          <!-- Loop through each task in the to-do list -->
           {% for todo in todo_list %}
+          <!-- List item for each task -->
           <li class="list__item">
+            <!-- Container for task details -->
             <div class="item__container">
+              <!-- Display the task name -->
               <p>{{todo.name}}</p>
+
+              <!-- Display whether the task is done or not -->
               {% if todo.done == False %}
               <p class="task__notdone">Not Done</p>
               {% else %}
               <p class="task__done">Done</p>
               {% endif %}
+
+              <!-- Button for updating a task, linking to the update route with task ID -->
               <button class="update">
-                <a href="/update/{{todo.task_id}}"">Update</a>
+                <a href="/update/{{todo.task_id}}">Update</a>
               </button>
+
+              <!-- Button for deleting a task, linking to the delete route with task ID -->
               <button class="delete">
                 <a href="/delete/{{todo.task_id}}">Delete</a>
               </button>
-            </div> 
+            </div>
           </li>
           {% endfor %}
         </ul>
