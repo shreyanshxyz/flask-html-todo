@@ -1,0 +1,122 @@
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+}
+
+body {
+  background-color: #ececec;
+}
+
+.main__container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  align-items: center;
+}
+
+.search__container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding-top: 20px;
+}
+
+.search__box {
+  padding: 10px 0 10px 0;
+  border-radius: 5px;
+  width: 500px;
+  background-color: white;
+}
+
+.search__button {
+  all: unset;
+  padding: 5px;
+  font-weight: 800;
+  border: 2px solid #385170;
+  background-color: #385170;
+  color: white;
+  border-radius: 10px;
+}
+
+.search__button:hover {
+  border: 2px solid #9fd3c7;
+  background-color: #9fd3c7;
+  color: #385170;
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.list__container {
+  width: 650px;
+  padding-top: 25px;
+}
+
+.list__main {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0 10px 0;
+  gap: 10px;
+}
+
+.list__item {
+  list-style: none;
+}
+
+.item__container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #ececec;
+  background-color: #142d4c;
+  padding: 15px 10px;
+  border-radius: 12px;
+}
+
+.item__container p {
+  font-weight: 700;
+  width: 25%;
+}
+
+.item__container .task__notdone {
+  color: #ff9a3c;
+}
+
+.item__container .task__done {
+  color: #42b883;
+}
+
+.item__container button {
+  all: unset;
+  padding: 5px 15px;
+  border-radius: 10px;
+}
+
+.item__container button {
+  all: unset;
+  padding: 5px 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.item__container .delete {
+  background-color: rgb(211, 36, 36);
+}
+
+.item__container .delete:hover {
+  background-color: #f95959;
+}
+.item__container .update {
+  background-color: #2a6e4f;
+}
+
+.item__container .update:hover {
+  background-color: #42b883;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 800;
+  color: #ececec;
+}
